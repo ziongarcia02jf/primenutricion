@@ -17,6 +17,8 @@
         <span class="logo">Prime<span class="texto-acento">Nutrición</span><span class="logo-dot">.</span></span>
         <div class="nav-links">
             <a href="#planes">Planos</a>
+
+            <a href="#sobre-mi">Sobre Franco</a>
             <a href="#resultados">Resultados</a>
             <a href="#proceso">Cómo funciona</a>
             <a href="#faq">FAQ</a>
@@ -266,6 +268,56 @@
                     <p class="aviso-falta" id="aviso-completo" hidden>⚠️ Falta completar nombre, peso o altura</p>
                 </details>
             </article>
+
+            <!-- ============ RUTINAS POR ZONA ($30.000 c/u) ============ -->
+            <div class="zonas-panel">
+                <h3 class="zonas-titulo">🏋️ RUTINAS POR ZONA <span class="zonas-precio">$30.000 c/u</span></h3>
+                <p class="zonas-sub">Elegí la zona que querés trabajar. Rutina específica, explicada y con progressión.</p>
+
+                <div class="zonas-grid">
+                    <button type="button" class="zona" data-zona="brazos" onclick="elegirZona('brazos')">💪 BRAZOS</button>
+                    <button type="button" class="zona" data-zona="pecho" onclick="elegirZona('pecho')">🛡️ PECHO</button>
+                    <button type="button" class="zona" data-zona="cuadriceps" onclick="elegirZona('cuadriceps')">🦵 CUÁDRICEPS</button>
+                    <button type="button" class="zona" data-zona="femoral" onclick="elegirZona('femoral')">🦿 FEMORAL + GLÚTEO (HOMBRE)</button>
+                    <button type="button" class="zona" data-zona="gluteo" onclick="elegirZona('gluteo')">🍑 GLÚTEO (MUJER)</button>
+                    <button type="button" class="zona" data-zona="espalda_densidad" onclick="elegirZona('espalda_densidad')">🔙 ESPALDA · DENSIDAD</button>
+                    <button type="button" class="zona" data-zona="espalda_amplitud" onclick="elegirZona('espalda_amplitud')">↔️ ESPALDA · AMPLITUD</button>
+                </div>
+
+                <details class="plan-form" id="zona-form">
+                    <summary>📝 Completá tus datos</summary>
+                    <div class="campos">
+                        <input id="zona-nombre" class="campo" placeholder="Tu nombre *" autocomplete="name">
+                        <div class="campo-fila">
+                            <input id="zona-edad" type="number" class="campo" placeholder="Edad">
+                            <input id="zona-peso" type="number" class="campo" placeholder="Peso (kg) *">
+                            <input id="zona-altura" type="number" class="campo" placeholder="Altura (cm) *">
+                        </div>
+                        <div class="campo-fila">
+                            <select id="zona-dias" class="campo">
+                                <option value="">Días por semana</option>
+                                <option>2 días</option><option>3 días</option><option>4 días</option>
+                                <option>5 días</option><option>6 días</option>
+                            </select>
+                            <select id="zona-experiencia" class="campo">
+                                <option value="">Experiencia</option>
+                                <option>Nunca entrené</option><option>Principiante</option>
+                                <option>Intermedio</option><option>Avanzado</option>
+                            </select>
+                        </div>
+                        <select id="zona-lugar" class="campo">
+                            <option value="">¿Dónde entrenás?</option>
+                            <option>Gimnasio</option>
+                            <option>Casa (con pesas)</option>
+                            <option>Casa (sin equipo)</option>
+                        </select>
+                        <textarea id="zona-lesiones" class="campo campo-area" placeholder="🤕 Lesiones o dolores en la zona (importante). Si no hay, poné -"></textarea>
+                        <textarea id="zona-salud" class="campo campo-area" placeholder="🏥 Problemas de salud relevantes. Si no hay, poné -"></textarea>
+                    </div>
+                    <button class="btn btn-acento btn-ancho" onclick="pedirZona()">💪 Pedir la rutina por WhatsApp</button>
+                    <p class="aviso-falta" id="aviso-zona" hidden>⚠️ Primero elegí una zona</p>
+                </details>
+            </div>
         </div>
 
         <!-- datalist compartido de objetivos -->
@@ -356,6 +408,23 @@
             <div class="paso"><span class="paso-num">2</span><h4>Te armo tu plan</h4><p>Leo tus datos, te hago las últimas consultas y en 24-72 hs tenés tu rutina y/o dieta lista.</p></div>
             <div class="paso"><span class="paso-num">3</span><h4>Reportás tu día a día</h4><p>Me pasás cómo fue tu entreno y tu alimentación y te voy corrigiendo en tiempo real.</p></div>
             <div class="paso"><span class="paso-num">4</span><h4>Mensualmente, ajustamos</h4><p>Todos los domingos revisamos tus progresos y actualizamos el plan para que nunca te estanques.</p></div>
+        </div>
+    </section>
+
+    <!-- SOBRE FRANCO -->
+    <section id="sobre-mi" class="seccion">
+        <h2 class="titulo-seccion">¿QUIÉN ES <span class="texto-acento">FRANCO PATIÑO?</span></h2>
+        <div class="sobre-grid">
+            <div class="sobre-datos">
+                <div class="sobre-dato"><strong>7</strong><span>años entrenando personas</span></div>
+                <div class="sobre-dato"><strong>24</strong><span>años de edad</span></div>
+                <div class="sobre-dato"><strong>✔</strong><span>Personal trainer certificado</span></div>
+                <div class="sobre-dato"><strong>📚</strong><span>Estudiante de educación física</span></div>
+            </div>
+            <div class="sobre-texto">
+                <p>Entreno personas hace <strong>7 años</strong>. Soy <strong>personal trainer certificado</strong> y estudiante de <strong>educación física</strong>: cada plan que armo tiene base técnica y respaldo, no son copies de internet.</p>
+                <p>Trabajo con nutrición + entrenamiento coordinados y <strong>seguimiento real</strong>: ajustamos según cómo respondés, semana a semana. Nada de dietas mágicas ni rutinas genéricas — cada plan se construye con <strong>tus datos, tu historia y tu objetivo</strong>.</p>
+            </div>
         </div>
     </section>
 

@@ -405,7 +405,105 @@ select.campo:has(option:checked[value=""]) { color: #6b7280; }
 .paso p { font-size: 12.5px; color: var(--texto-suave); }
 
 /* ============================================================
-   TESTIMONIOS
+   RUTINAS POR ZONA
+   ============================================================ */
+.zonas-panel {
+    grid-column: 1 / -1;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 22px;
+    backdrop-filter: blur(12px);
+}
+.zonas-titulo {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.zonas-precio {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--acento);
+    background: var(--acento-bg);
+    border: 1px solid rgba(200, 247, 60, 0.3);
+    border-radius: 999px;
+    padding: 4px 12px;
+    letter-spacing: 0.5px;
+}
+.zonas-sub { font-size: 12.5px; color: var(--texto-suave); margin: 6px 0 16px; }
+
+.zonas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.zona {
+    padding: 13px 10px;
+    font-family: 'Anton', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--texto);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color .15s, background .15s, color .15s;
+}
+.zona:hover { border-color: rgba(200, 247, 60, 0.45); }
+.zona.elegida {
+    color: #0b0f04;
+    background: var(--acento);
+    border-color: var(--acento);
+}
+.zonca-fila { display: flex; gap: 10px; }
+
+@media (max-width: 720px) {
+    .zonas-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   SOBRE FRANCO
+   ============================================================ */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 26px;
+    max-width: 940px;
+    margin: 0 auto;
+    align-items: center;
+}
+.sobre-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.sobre-dato {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 18px 14px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+.sobre-dato strong {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: var(--acento);
+    letter-spacing: 1px;
+}
+.sobre-dato span { font-size: 11.5px; color: var(--texto-suave); }
+.sobre-texto p { font-size: 15px; color: #d4d4d8; line-height: 1.75; margin-bottom: 14px; }
+.sobre-texto strong { color: var(--texto); }
+
+/* ============================================================
+   TESTIMONIOS (solo casos reales)
    ============================================================ */
 .testimonios-grid {
     display: grid;

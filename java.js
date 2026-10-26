@@ -75,8 +75,52 @@ const CAMPOS_PLAN = {
         ["lesiones", "🤕 Lesiones / dolores", false],
         ["alergias", "⚠️ Alergias / alimentos que evita", false],
         ["salud", "🏥 Salud / medicación", false]
+    ],
+    // Rutinas por zona: comparten un único formulario (prefijo "zona-")
+    zona: [
+        ["nombre", "👤 Nombre", true],
+        ["edad", "🎂 Edad", false],
+        ["peso", "⚖️ Peso", true],
+        ["altura", "📏 Altura", true],
+        ["dias", "🏋️ Días por semana", false],
+        ["experiencia", "💪 Experiencia", false],
+        ["lugar", "📍 Entrena en", false],
+        ["lesiones", "🤕 Lesiones / dolores", false],
+        ["salud", "🏥 Salud / medicación", false]
     ]
 };
+
+// Rutinas por zona disponibles ($30.000 cada una)
+const ZONAS = {
+    brazos: "RUTINA DE BRAZOS 💪",
+    pecho: "RUTINA DE PECHO 🛡️",
+    cuadriceps: "RUTINA DE CUÁDRICEPS 🦵",
+    femoral: "RUTINA DE FEMORAL Y GLÚTEO (HOMBRE) 🦿",
+    gluteo: "RUTINA DE GLÚTEO (MUJER) 🍑",
+    espalda_densidad: "RUTINA DE ESPALDA · DENSIDAD 🔙",
+    espalda_amplitud: "RUTINA DE ESPALDA · AMPLITUD ↔️"
+};
+
+let zonaActual = null;
+
+function elegirZona(clave) {
+    zonaActual = clave;
+    document.querySelectorAll(".zona").forEach(z => {
+        z.classList.toggle("elegida", z.dataset.zona === clave);
+    });
+    $("aviso-zona").hidden = true;
+}
+
+// Acción del botón del panel de rutinas por zona
+function pedirZona() {
+    if (!zonaActual) {
+        $("aviso-zona").hidden = false;
+        return;
+    }
+    const frase = "Quiero la " + ZONAS[zonaActual] + " ($30.000).";
+    const url = construirMensaje("zona", frase);
+    if (url) window.open(url, "_blank");
+}
 
 const FRASE_PLAN = {
     dieta: "Quiero el PLAN DE DIETA 🥗 (1 mes).",
@@ -87,7 +131,7 @@ const FRASE_PLAN = {
 
 // Devuelve el mensaje completo con los datos del formulario.
 // Si falta algo obligatorio, marca los campos en rojo y devuelve null.
-function construirMensaje(plan) {
+function construirMensaje(plan, frasePersonalizada) {
     const campos = CAMPOS_PLAN[plan];
     const lineas = [];
     let faltan = [];
@@ -117,7 +161,7 @@ function construirMensaje(plan) {
         return null;
     }
 
-    let texto = "¡Hola " + COACH + "! " + FRASE_PLAN[plan]
+    let texto = "¡Hola " + COACH + "! " + (frasePersonalizada || FRASE_PLAN[plan])
         + "\n\nEstos son mis datos para que lo armes:\n"
         + lineas.join("\n");
 
