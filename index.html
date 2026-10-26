@@ -56,8 +56,7 @@
             <article class="card-plan">
                 <span class="plan-etiqueta">🥗 NUTRICIÓN</span>
                 <h3>PLAN<br>DE DIETA</h3>
-                <!-- PONER PRECIO cuando el cliente lo defina -->
-                <div class="plan-precio"><span class="precio-valor">$XX.XXX</span></div>
+                <div class="plan-precio"><span class="precio-valor">$30.000</span><span class="precio-ancla">1 mes</span></div>
                 <ul class="plan-incluye">
                     <li>Plan nutricional armado a tus macros (kcal, proteína, etc.)</li>
                     <li>Los alimentos que VOS ya comés, para que sea simple</li>
@@ -103,8 +102,7 @@
             <article class="card-plan">
                 <span class="plan-etiqueta">🏋️ ENTRENAMIENTO</span>
                 <h3>PLAN<br>DE RUTINA</h3>
-                <!-- PONER PRECIO cuando el cliente lo defina -->
-                <div class="plan-precio"><span class="precio-valor">$XX.XXX</span></div>
+                <div class="plan-precio"><span class="precio-valor">$70.000</span><span class="precio-ancla">1 mes</span></div>
                 <ul class="plan-incluye">
                     <li>Programa según los días que puedas entrenar (2 a 6)</li>
                     <li>Ejercicios, series y progresión de cargas explicados</li>
@@ -151,16 +149,72 @@
                 </details>
             </article>
 
+            <!-- ============ PLAN COMPLETO 1 MES ============ -->
+            <article class="card-plan">
+                <span class="plan-etiqueta">🥗🏋️ NUTRICIÓN + ENTRENAMIENTO</span>
+                <h3>PLAN<br>COMPLETO 1 MES</h3>
+                <div class="plan-precio"><span class="precio-valor">$100.000</span><span class="precio-ancla">1 mes</span></div>
+                <ul class="plan-incluye">
+                    <li><strong>Rutina completa</strong> + <strong>dieta completa</strong> (todo lo de los planes anteriores)</li>
+                    <li>Rutina y dieta coordinadas entre sí para un mismo objetivo</li>
+                    <li>1 ajuste incluido durante el mes</li>
+                    <li>Soporte por WhatsApp para dudas</li>
+                </ul>
+
+                <details class="plan-form">
+                    <summary>📝 Completá tus datos</summary>
+                    <div class="campos">
+                        <input id="combo-nombre" class="campo" placeholder="Tu nombre *" autocomplete="name">
+                        <div class="campo-fila">
+                            <input id="combo-edad" type="number" class="campo" placeholder="Edad">
+                            <input id="combo-objetivo" list="objetivos" class="campo" placeholder="Objetivo (ej: bajar grasa)">
+                            <input id="combo-peso" type="number" class="campo" placeholder="Peso (kg) *">
+                            <input id="combo-altura" type="number" class="campo" placeholder="Altura (cm) *">
+                        </div>
+                        <div class="campo-fila">
+                            <select id="combo-dias" class="campo">
+                                <option value="">Días por semana</option>
+                                <option>2 días</option><option>3 días</option><option>4 días</option>
+                                <option>5 días</option><option>6 días</option>
+                            </select>
+                            <select id="combo-experiencia" class="campo">
+                                <option value="">Experiencia</option>
+                                <option>Nunca entrené</option><option>Principiante</option>
+                                <option>Intermedio</option><option>Avanzado</option>
+                            </select>
+                        </div>
+                        <div class="campo-fila">
+                            <select id="combo-lugar" class="campo">
+                                <option value="">¿Dónde entrenás?</option>
+                                <option>Gimnasio</option>
+                                <option>Casa (con pesas)</option>
+                                <option>Casa (sin equipo)</option>
+                            </select>
+                            <select id="combo-tipo" class="campo">
+                                <option value="">Tipo de alimentación</option>
+                                <option>Omnívoro</option><option>Vegetariano</option>
+                                <option>Vegano</option><option>Celiaco / sin TACC</option>
+                            </select>
+                        </div>
+                        <textarea id="combo-lesiones" class="campo campo-area" placeholder="🤕 Lesiones o dolores. Si no hay, poné -"></textarea>
+                        <textarea id="combo-alergias" class="campo campo-area" placeholder="⚠️ Alergias/intolerancias, alimentos que no comés. Si no hay, poné -"></textarea>
+                        <textarea id="combo-salud" class="campo campo-area" placeholder="🏥 Problemas de salud relevantes (presión, tiroides, diabetes, medicación…). Si no hay, poné -"></textarea>
+                    </div>
+                    <button class="btn btn-acento btn-ancho" onclick="pedirPlan('combo')">🥗🏋️ Pedir el plan completo por WhatsApp</button>
+                    <p class="aviso-falta" id="aviso-combo" hidden>⚠️ Falta completar nombre, peso o altura</p>
+                </details>
+            </article>
+
             <!-- ============ PLAN COMPLETO (destacado) ============ -->
             <article class="card-plan plan-destacado">
                 <span class="plan-dest">⭐ MÁS ELEGIDO</span>
                 <span class="plan-etiqueta">🔥 TODO INCLUIDO</span>
                 <h3>PLAN COMPLETO<br>+ SEGUIMIENTO <span class="texto-acento">3 MESES</span></h3>
                 <div class="plan-precio">
-                    <span class="precio-valor">$180.000</span>
-                    <!-- PONER suma de planes sueltos cuando se definan precios -->
-                    <span class="precio-ancla">$XX.XXX por separado</span>
+                    <span class="precio-valor">$200.000</span>
+                    <span class="precio-ancla">$300.000 mes a mes</span>
                 </div>
+                <span class="plan-ahorro">💚 AHORRÁS $100.000 pagando los 3 meses</span>
                 <ul class="plan-incluye">
                     <li><strong>Rutina completa</strong> + <strong>dieta completa</strong> (todo lo de los planes anteriores)</li>
                     <li><strong>Seguimiento DIARIO</strong> por 3 meses: me pasás tu día y te corrijo</li>
@@ -224,43 +278,73 @@
         </datalist>
     </section>
 
-    <!-- ANTES / DESPUÉS (carrusel) -->
+    <!-- ANTES / DESPUÉS: casos reales -->
     <section id="resultados" class="seccion seccion-fondo">
         <h2 class="titulo-seccion">RESULTADOS <span class="texto-acento">REALES</span></h2>
-        <p class="sub-seccion">Todos con plan personalizado y seguimiento. Deslizá para verlos ➡️</p>
+        <p class="sub-seccion">Transformaciones con plan y seguimiento de Franco. Deslizá para ver cada caso ➡️</p>
 
-        <div class="carrusel" id="carrusel">
-            <div class="carrusel-pista" id="carruselPista">
-
-                <!-- Sustituir con fotos reales del cliente -->
-                <div class="slide">
-                    <div class="slide-fotos">
-                        <figure><img src="https://images.unsplash.com/photo-1590487988256-9ed24103863e?w=500&q=80" alt="Antes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption>ANTES</figcaption></figure>
-                        <figure><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2fa1c5?w=500&q=80" alt="Después" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption class="fig-despues">DESPUÉS</figcaption></figure>
-                    </div>
-                    <p class="slide-dato">💬 "Bajé <strong>9 kg</strong> en 12 semanas sin morirme de hambre" — Nicolás</p>
-                </div>
-
-                <div class="slide">
-                    <div class="slide-fotos">
-                        <figure><img src="https://images.unsplash.com/photo-1567598508481-652866bfe700?w=500&q=80" alt="Antes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption>ANTES</figcaption></figure>
-                        <figure><img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&q=80" alt="Después" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption class="fig-despues">DESPUÉS</figcaption></figure>
-                    </div>
-                    <p class="slide-dato">💬 "Subí <strong>6 kg de músculo</strong> estando en casa con pesas livianas" — Camila</p>
-                </div>
-
-                <div class="slide">
-                    <div class="slide-fotos">
-                        <figure><img src="https://images.unsplash.com/photo-1550345332-aabbfd7ac9fd?w=500&q=80" alt="Antes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption>ANTES</figcaption></figure>
-                        <figure><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Después" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption class="fig-despues">DESPUÉS</figcaption></figure>
-                    </div>
-                    <p class="slide-dato">💬 "Con lumbalgia, entrenando SIN dolor y bajé <strong>12 cm</strong> de cintura" — Diego</p>
-                </div>
+        <div class="tira-wrap">
+            <div class="tira" id="tira">
+                <figure class="card-resultado">
+                    <img src="img/leandro.jpg" alt="Leandro Chimera: antes y después, reacondicionamiento en 3 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>LEANDRO CHIMERA</strong><span>Reacondicionamiento + pérdida de grasa · 3 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/nadia.jpg" alt="Nadia: de 84 a 62 kilos" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>NADIA</strong><span>-22 KG · 84 → 62 kg ✔ de verdad, sin magia</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/jorgito.jpg" alt="Jorgito: de 86 a 70 kilos, seguimiento online" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>JORGITO</strong><span>-15 KG · 86 → 70 · seguimiento online</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/lore.jpg" alt="Lore: 5 meses entrenando con hernias discales" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>LORE</strong><span>Entrena con hernias discales · 5 meses SIN dolor</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/walter.jpg" alt="Walter: de 108 a 105 kilos en un mes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>WALTER</strong><span>-3 KG en 1 mes · 108 → 105 kg</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/nicolas.jpg" alt="Nicolas: antes y después de 3 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>NICOLAS</strong><span>Grasa ↓ + músculo ↑ · 3 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/jeldes.jpg" alt="Claudio Jeldes: más 4 kilos de masa en 2 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>CLAUDIO JELDES</strong><span>+4 kg de masa corporal · 2 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/rodrigo.jpg" alt="Rodrigo Benítez: antes y después, 3 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>RODRIGO BENITEZ</strong><span>Grasa ↓ + músculo ↑ · 3 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/loli.jpg" alt="Loli: antes y después, 3 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>LOLI</strong><span>Grasa ↓ + músculo ↑ · 3 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/claudio.jpg" alt="Claudio: tonificación, 4 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>CLAUDIO</strong><span>Tonificación · 4 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/claudia.jpg" alt="Claudia Paggliano: recomposición corporal, 2 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>CLAUDIA PAGGLIANO</strong><span>Recomposición corporal · 2 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/nahue.jpg" alt="Nahue Gongora: reacondicionamiento físico" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>NAHUE GONGORA</strong><span>Reacondicionamiento · pérdida de grasa</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/jesus.jpg" alt="Jesus: reacondicionamiento físico, 4 meses" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>JESUS</strong><span>Reacondicionamiento físico · 4 meses</span></figcaption>
+                </figure>
+                <figure class="card-resultado">
+                    <img src="img/marcela.jpg" alt="Marcela Leale: tonificación desde enero" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')">
+                    <figcaption><strong>MARCELA LEALE</strong><span>Tonificación · desde 21/01</span></figcaption>
+                </figure>
             </div>
 
-            <button class="carrusel-flecha atras" onclick="moverCarrusel(-1)" aria-label="Anterior">❮</button>
-            <button class="carrusel-flecha delante" onclick="moverCarrusel(1)" aria-label="Siguiente">❯</button>
-            <div class="carrusel-puntos" id="carruselPuntos"></div>
+            <button class="flecha-tira atras" onclick="moverTira(-1)" aria-label="Anterior">❮</button>
+            <button class="flecha-tira delante" onclick="moverTira(1)" aria-label="Siguiente">❯</button>
         </div>
     </section>
 
@@ -275,29 +359,39 @@
         </div>
     </section>
 
-    <!-- TESTIMONIOS -->
+    <!-- TESTIMONIOS (solo casos reales, sin frases inventadas) -->
     <section id="testimonios" class="seccion seccion-fondo">
-        <h2 class="titulo-seccion">LO QUE DICEN SUS <span class="texto-acento">ALUMNOS</span></h2>
+        <h2 class="titulo-seccion">LO QUE LOGRARON SUS <span class="texto-acento">ALUMNOS</span></h2>
         <div class="testimonios-grid">
             <figure class="card-testimonio">
-                <span class="estrellas">★★★★★</span>
-                <blockquote>"Laburo 10 horas y pensé que nunca iba a poder. El plan se adaptó a MI horario, no al revés. -9 kg en 3 meses y la dieta es de comida comun."</blockquote>
-                <figcaption><span class="t-foto">👤</span><div><strong>Nicolás S.</strong><span> Plan completo · 3 meses</span></div></figcaption>
+                <div class="t-top"><strong class="t-nombre">NADIA</strong><span class="t-res">-22 kg</span></div>
+                <p class="t-dato">De <strong>84 a 62 kg</strong>. Objetivo: descenso de grasa y tonificación, con plan de dieta y check-in de cada día.</p>
+                <span class="t-tiempo">Plan de dieta + seguimiento</span>
             </figure>
             <figure class="card-testimonio">
-                <span class="estrellas">★★★★★</span>
-                <blockquote>"Tenía miedo de lesionarme otra vez. Me armo la rutina alrededor de mi rodilla y entrené los 3 meses sin un solo dolor raro."</blockquote>
-                <figcaption><span class="t-foto">👤</span><div><strong>Diego M.</strong><span> Plan completo · 3 meses</span></div></figcaption>
+                <div class="t-top"><strong class="t-nombre">JORGITO</strong><span class="t-res">-15 kg</span></div>
+                <p class="t-dato">De <strong>86 a 70 kg</strong> con seguimiento online: entrenando desde su casa, sin ir al gimnasio.</p>
+                <span class="t-tiempo">Seguimiento online</span>
             </figure>
             <figure class="card-testimonio">
-                <span class="estrellas">★★★★★</span>
-                <blockquote>"Comí SIEMPRE de todo: asado, pastas, salida con amigas. La dieta se hace flexible. Bajé 6 kg y no dejé de vivir."</blockquote>
-                <figcaption><span class="t-foto">👤</span><div><strong>Camila R.</strong><span> Plan de dieta · 2 meses</span></div></figcaption>
+                <div class="t-top"><strong class="t-nombre">LORE</strong><span class="t-res">5 meses</span></div>
+                <p class="t-dato">Plan adaptado a <strong>hernias discales</strong>, desgarro de deltoídes y pinzamiento lumbar: entrenó todo el proceso SIN dolor.</p>
+                <span class="t-tiempo">Plan completo adaptado</span>
             </figure>
             <figure class="card-testimonio">
-                <span class="estrellas">★★★★★</span>
-                <blockquote>"Empecé sin saber ni cómo agarrar una barra. La rutina con videos me salvó: hoy entreno solo y me banco la rutina entera."</blockquote>
-                <figcaption><span class="t-foto">👤</span><div><strong>Tomás L.</strong><span> Plan de rutina · podría repetirse</span></div></figcaption>
+                <div class="t-top"><strong class="t-nombre">CLAUDIO JELDES</strong><span class="t-res">+4 kg</span></div>
+                <p class="t-dato"><strong>+4 kg de masa corporal</strong> en 2 meses con su plan de rutina y dieta para volumen.</p>
+                <span class="t-tiempo">Plan completo · 2 meses</span>
+            </figure>
+            <figure class="card-testimonio">
+                <div class="t-top"><strong class="t-nombre">WALTER</strong><span class="t-res">-3 kg / 1 mes</span></div>
+                <p class="t-dato">Arrancó pesando <strong>108 kg</strong>: al primer mes ya estaba en 105 kg y encaminado con su dieta.</p>
+                <span class="t-tiempo">Plan con seguimiento · 1 mes</span>
+            </figure>
+            <figure class="card-testimonio">
+                <div class="t-top"><strong class="t-nombre">LEANDRO CHIMERA</strong><span class="t-res">3 meses</span></div>
+                <p class="t-dato"><strong>Reacondicionamiento físico</strong> enfocado en pérdida de grasa, con plan de rutina y hábitos.</p>
+                <span class="t-tiempo">Plan completo · 3 meses</span>
             </figure>
         </div>
     </section>
@@ -310,7 +404,7 @@
             <details class="faq-item"><summary>🏠 ¿Puedo entrenar en casa sin máquinas?</summary><p>Sí. Lo elegís en el formulario y el plan se arma con lo que tengas: gimnasio completo, pesas livianas en casa, o puro peso corporal.</p></details>
             <details class="faq-item"><summary>🥘 ¿La dieta me saca asado y salidas?</summary><p>No. Es una dieta FLEXIBLE: se estructura con lo que vos ya comés, ajustan cantidades y queda lugar para las salidas. Nada de comer pollo con arroz 6 veces al día.</p></details>
             <details class="faq-item"><summary>🤕 ¿Qué pasa si tengo una lesión?</summary><p>Ponela en el formulario. Se arman el plan evitando los movimientos comprometidos y con alternativas seguras. Si tu lesión requiere, te pido el visto bueno de tu médico o kinesiólogo.</p></details>
-            <details class="faq-item"><summary>💳 ¿Cómo se paga?</summary><p>Por transferencia (Mercado Pago o banco) al confirmar el plan. Se abona el 100% por adelantado en el caso de los planes de consulta única, o en 3 cuotas mensuales el plan completo con seguimiento.</p></details>
+            <details class="faq-item"><summary>💳 ¿Cómo se paga?</summary><p>Transferencia o Mercado Pago al confirmar el plan. Los planes de 1 mes (dieta, rutina o completo) se abonan por adelantado; el plan completo con seguimiento de 3 meses se paga los $200.000 de una o en 3 cuotas mensuales de ~$66.000.</p></details>
             <details class="faq-item"><summary>🔄 ¿Qué pasa si no veo resultados?</summary><p>El seguimiento diario del plan completo existe justamente para eso: si algo no está funcionando, lo cambio. El sistema se ajusta a vos, no al revés.</p></details>
         </div>
     </section>

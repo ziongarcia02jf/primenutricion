@@ -48,6 +48,20 @@ const CAMPOS_PLAN = {
         ["lesiones", "🤕 Lesiones / dolores", false],
         ["salud", "🏥 Salud / medicación", false]
     ],
+    combo: [
+        ["nombre", "👤 Nombre", true],
+        ["edad", "🎂 Edad", false],
+        ["peso", "⚖️ Peso", true],
+        ["altura", "📏 Altura", true],
+        ["objetivo", "🎯 Objetivo", false],
+        ["dias", "🏋️ Días por semana", false],
+        ["experiencia", "💪 Experiencia", false],
+        ["lugar", "📍 Entrena en", false],
+        ["tipo", "🥗 Tipo de alimentación", false],
+        ["lesiones", "🤕 Lesiones / dolores", false],
+        ["alergias", "⚠️ Alergias / alimentos que evita", false],
+        ["salud", "🏥 Salud / medicación", false]
+    ],
     completo: [
         ["nombre", "👤 Nombre", true],
         ["edad", "🎂 Edad", false],
@@ -65,9 +79,10 @@ const CAMPOS_PLAN = {
 };
 
 const FRASE_PLAN = {
-    dieta: "Quiero el PLAN DE DIETA 🥗 (consulta única).",
-    rutina: "Quiero el PLAN DE RUTINA 🏋️ (consulta única).",
-    completo: "Quiero el PLAN COMPLETO 🔥: rutina + dieta + seguimiento diario por 3 meses."
+    dieta: "Quiero el PLAN DE DIETA 🥗 (1 mes).",
+    rutina: "Quiero el PLAN DE RUTINA 🏋️ (1 mes).",
+    combo: "Quiero el PLAN COMPLETO de 1 mes 🥗🏋️: dieta + rutina.",
+    completo: "Quiero el PLAN COMPLETO con SEGUIMIENTO DIARIO por 3 MESES 🔥: dieta + rutina + seguimiento."
 };
 
 // Devuelve el mensaje completo con los datos del formulario.
@@ -115,55 +130,17 @@ function pedirPlan(plan) {
     if (url) window.open(url, "_blank");
 }
 
-// ================== Carrusel de resultados ==================
-let slideActual = 0;
-let autoCarrusel = null;
-
-function moverCarrusel(direccion) {
-    const pista = $("carruselPista");
-    const total = pista.children.length;
-    slideActual = (slideActual + direccion + total) % total;
-    mostrarSlide();
-    reiniciarAuto();
-}
-
-function irASlide(indice) {
-    slideActual = indice;
-    mostrarSlide();
-    reiniciarAuto();
-}
-
-function mostrarSlide() {
-    const pista = $("carruselPista");
-    const total = pista.children.length;
-    pista.style.transform = "translateX(-" + slideActual * 100 + "%)";
-    [...$("carruselPuntos").children].forEach((punto, i) => {
-        punto.classList.toggle("activo", i === slideActual);
-    });
-}
-
-function reiniciarAuto() {
-    clearInterval(autoCarrusel);
-    autoCarrusel = setInterval(() => {
-        slideActual = (slideActual + 1) % $("carruselPista").children.length;
-        mostrarSlide();
-    }, 5500);
+// ================== Tira de resultados (scroll) ==================
+function moverTira(direccion) {
+    const tira = $("tira");
+    if (!tira) return;
+    const tarjeta = tira.querySelector(".card-resultado");
+    const paso = tarjeta ? tarjeta.getBoundingClientRect().width + 16 : 260;
+    tira.scrollBy({ left: direccion * paso, behavior: "smooth" });
 }
 
 // ================== Arranque ==================
 (function iniciar() {
-    // Puntos del carrusel, uno por slide
-    const pista = $("carruselPista");
-    const puntos = $("carruselPuntos");
-    for (let i = 0; i < pista.children.length; i++) {
-        const punto = document.createElement("button");
-        punto.className = "punto" + (i === 0 ? " activo" : "");
-        punto.setAttribute("aria-label", "Ir al resultado " + (i + 1));
-        punto.onclick = () => irASlide(i);
-        puntos.appendChild(punto);
-    }
-    reiniciarAuto();
-
     // Al tipear se quita el marcado rojo de "campo faltante"
     document.querySelectorAll(".campo").forEach(c => {
         c.addEventListener("input", () => c.classList.remove("falta"));
