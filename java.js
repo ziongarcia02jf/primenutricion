@@ -2,7 +2,7 @@
 // WhatsApp: código país + número, SIN el "+" (wa.me lo pide así)
 const WHATSAPP = "5491122929399";   // +54 9 11 2292-9399
 const COACH = "Franco";
-const IG_URL = "https://www.instagram.com/primenutricion/";
+const IG_URL = "https://www.instagram.com/frannp18/";
 
 const $ = (id) => document.getElementById(id);
 
