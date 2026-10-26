@@ -585,7 +585,7 @@ select.campo:has(option:checked[value=""]) { color: #6b7280; }
 .wsp-flotante {
     position: fixed;
     bottom: 22px;
-    right: 22px;
+    left: 22px;
     z-index: 50;
     width: 58px; height: 58px;
     border-radius: 50%;

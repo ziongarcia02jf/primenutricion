@@ -13,7 +13,7 @@ function waUrl(texto) {
 
 // Botón flotante / nav / CTA final: consulta general
 function whatsappDirecto() {
-    window.open(waUrl("¡Hola " + COACH + "! Vengo de tu página 🏋️ y quiero más info de los planes de asesoría."), "_blank");
+    window.open(waUrl("¡Hola " + COACH + "! Vengo de tu página y quiero más info de los planes de asesoría."), "_blank");
 }
 
 function instagramDirecto() {
@@ -25,80 +25,88 @@ function instagramDirecto() {
 // Los campos obligatorios (nombre, peso, altura) se validan antes de enviar.
 const CAMPOS_PLAN = {
     dieta: [
-        ["nombre", "👤 Nombre", true],
-        ["edad", "🎂 Edad", false],
-        ["peso", "⚖️ Peso", true],
-        ["altura", "📏 Altura", true],
-        ["objetivo", "🎯 Objetivo", false],
-        ["tipo", "🥗 Tipo de alimentación", false],
-        ["comidas", "🍽️ Comidas por día", false],
-        ["alergias", "⚠️ Alergias / alimentos que evita", false],
-        ["salud", "🏥 Salud / medicación", false]
+        ["nombre", "Nombre", true],
+        ["edad", "Edad", false],
+        ["peso", "Peso (kg)", true],
+        ["altura", "Altura (cm)", true],
+        ["objetivo", "Objetivo", false],
+        ["tipo", "Tipo de alimentación", false],
+        ["comidas", "Comidas por día", false],
+        ["alergias", "Alergias / alimentos que evitás", false],
+        ["salud", "Salud / medicación", false]
     ],
     rutina: [
-        ["nombre", "👤 Nombre", true],
-        ["edad", "🎂 Edad", false],
-        ["peso", "⚖️ Peso", true],
-        ["altura", "📏 Altura", true],
-        ["objetivo", "🎯 Objetivo", false],
-        ["dias", "🏋️ Días por semana", false],
-        ["experiencia", "💪 Experiencia", false],
-        ["lugar", "📍 Entrena en", false],
-        ["horario", "⏱️ Duración de las sesiones", false],
-        ["lesiones", "🤕 Lesiones / dolores", false],
-        ["salud", "🏥 Salud / medicación", false]
+        ["nombre", "Nombre", true],
+        ["edad", "Edad", false],
+        ["peso", "Peso (kg)", true],
+        ["altura", "Altura (cm)", true],
+        ["objetivo", "Objetivo", false],
+        ["dias", "Días por semana", false],
+        ["experiencia", "Experiencia", false],
+        ["lugar", "Entrenás en", false],
+        ["horario", "Duración de las sesiones", false],
+        ["lesiones", "Lesiones / dolores", false],
+        ["salud", "Salud / medicación", false]
     ],
     combo: [
-        ["nombre", "👤 Nombre", true],
-        ["edad", "🎂 Edad", false],
-        ["peso", "⚖️ Peso", true],
-        ["altura", "📏 Altura", true],
-        ["objetivo", "🎯 Objetivo", false],
-        ["dias", "🏋️ Días por semana", false],
-        ["experiencia", "💪 Experiencia", false],
-        ["lugar", "📍 Entrena en", false],
-        ["tipo", "🥗 Tipo de alimentación", false],
-        ["lesiones", "🤕 Lesiones / dolores", false],
-        ["alergias", "⚠️ Alergias / alimentos que evita", false],
-        ["salud", "🏥 Salud / medicación", false]
+        ["nombre", "Nombre", true],
+        ["edad", "Edad", false],
+        ["peso", "Peso (kg)", true],
+        ["altura", "Altura (cm)", true],
+        ["objetivo", "Objetivo", false],
+        ["dias", "Días por semana", false],
+        ["experiencia", "Experiencia", false],
+        ["lugar", "Entrenás en", false],
+        ["tipo", "Tipo de alimentación", false],
+        ["lesiones", "Lesiones / dolores", false],
+        ["alergias", "Alergias / alimentos que evitás", false],
+        ["salud", "Salud / medicación", false]
     ],
     completo: [
-        ["nombre", "👤 Nombre", true],
-        ["edad", "🎂 Edad", false],
-        ["peso", "⚖️ Peso", true],
-        ["altura", "📏 Altura", true],
-        ["objetivo", "🎯 Objetivo", false],
-        ["dias", "🏋️ Días por semana", false],
-        ["experiencia", "💪 Experiencia", false],
-        ["lugar", "📍 Entrena en", false],
-        ["tipo", "🥗 Tipo de alimentación", false],
-        ["lesiones", "🤕 Lesiones / dolores", false],
-        ["alergias", "⚠️ Alergias / alimentos que evita", false],
-        ["salud", "🏥 Salud / medicación", false]
+        ["nombre", "Nombre", true],
+        ["edad", "Edad", false],
+        ["peso", "Peso (kg)", true],
+        ["altura", "Altura (cm)", true],
+        ["objetivo", "Objetivo", false],
+        ["dias", "Días por semana", false],
+        ["experiencia", "Experiencia", false],
+        ["lugar", "Entrenás en", false],
+        ["tipo", "Tipo de alimentación", false],
+        ["lesiones", "Lesiones / dolores", false],
+        ["alergias", "Alergias / alimentos que evitás", false],
+        ["salud", "Salud / medicación", false]
     ],
     // Rutinas por zona: comparten un único formulario (prefijo "zona-")
     zona: [
-        ["nombre", "👤 Nombre", true],
-        ["edad", "🎂 Edad", false],
-        ["peso", "⚖️ Peso", true],
-        ["altura", "📏 Altura", true],
-        ["dias", "🏋️ Días por semana", false],
-        ["experiencia", "💪 Experiencia", false],
-        ["lugar", "📍 Entrena en", false],
-        ["lesiones", "🤕 Lesiones / dolores", false],
-        ["salud", "🏥 Salud / medicación", false]
+        ["nombre", "Nombre", true],
+        ["edad", "Edad", false],
+        ["peso", "Peso (kg)", true],
+        ["altura", "Altura (cm)", true],
+        ["dias", "Días por semana", false],
+        ["experiencia", "Experiencia", false],
+        ["lugar", "Entrenás en", false],
+        ["lesiones", "Lesiones / dolores", false],
+        ["salud", "Salud / medicación", false]
     ]
+};
+
+// Todos los mensajes van sin emojis (a pedido del cliente)
+const FRASE_PLAN = {
+    dieta: "Quiero el PLAN DE DIETA (1 mes).",
+    rutina: "Quiero el PLAN DE RUTINA (1 mes).",
+    combo: "Quiero el PLAN COMPLETO de 1 mes: dieta + rutina.",
+    completo: "Quiero el PLAN COMPLETO con SEGUIMIENTO DIARIO por 3 MESES: dieta + rutina + seguimiento."
 };
 
 // Rutinas por zona disponibles ($30.000 cada una)
 const ZONAS = {
-    brazos: "RUTINA DE BRAZOS 💪",
-    pecho: "RUTINA DE PECHO 🛡️",
-    cuadriceps: "RUTINA DE CUÁDRICEPS 🦵",
-    femoral: "RUTINA DE FEMORAL Y GLÚTEO (HOMBRE) 🦿",
-    gluteo: "RUTINA DE GLÚTEO (MUJER) 🍑",
-    espalda_densidad: "RUTINA DE ESPALDA · DENSIDAD 🔙",
-    espalda_amplitud: "RUTINA DE ESPALDA · AMPLITUD ↔️"
+    brazos: "RUTINA DE BRAZOS",
+    pecho: "RUTINA DE PECHO",
+    cuadriceps: "RUTINA DE CUÁDRICEPS",
+    femoral: "RUTINA DE FEMORAL Y GLÚTEO (HOMBRE)",
+    gluteo: "RUTINA DE GLÚTEO (MUJER)",
+    espalda_densidad: "RUTINA DE ESPALDA - DENSIDAD",
+    espalda_amplitud: "RUTINA DE ESPALDA - AMPLITUD"
 };
 
 let zonaActual = null;
@@ -121,13 +129,6 @@ function pedirZona() {
     const url = construirMensaje("zona", frase);
     if (url) window.open(url, "_blank");
 }
-
-const FRASE_PLAN = {
-    dieta: "Quiero el PLAN DE DIETA 🥗 (1 mes).",
-    rutina: "Quiero el PLAN DE RUTINA 🏋️ (1 mes).",
-    combo: "Quiero el PLAN COMPLETO de 1 mes 🥗🏋️: dieta + rutina.",
-    completo: "Quiero el PLAN COMPLETO con SEGUIMIENTO DIARIO por 3 MESES 🔥: dieta + rutina + seguimiento."
-};
 
 // Devuelve el mensaje completo con los datos del formulario.
 // Si falta algo obligatorio, marca los campos en rojo y devuelve null.
