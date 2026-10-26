@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco Patiño | Primenutrición — Rutinas de gym, dietas y asesoría online 1:1</title>
+    <meta name="description" content="Rutinas de gym y dietas 100% personalizadas con seguimiento diario por 3 meses. Cambiá tu cuerpo con un plan hecho para vos.">
+    <meta name="theme-color" content="#08080a">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2308080a'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle'%3E🏋%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <span class="logo">Prime<span class="texto-acento">Nutrición</span><span class="logo-dot">.</span></span>
+        <div class="nav-links">
+            <a href="#planes">Planos</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#proceso">Cómo funciona</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <a class="btn btn-acento btn-nav" href="#" onclick="whatsappDirecto(); return false;">💬 Consultar</a>
+    </nav>
+
+    <!-- HERO (wallpaper full estilo beacons) -->
+    <header class="hero">
+        <div class="hero-contenido">
+            <span class="hero-badge">⚡ ASESORÍA ONLINE 1:1 · CUPOS LIMITADOS</span>
+            <h1 class="hero-titulo">TU MEJOR VERSIÓN<br><span class="texto-acento">EN 3 MESES</span></h1>
+            <p class="hero-sub">
+                Rutina de gym y dieta 100% personalizadas + <strong>te acompaño todos los días</strong>
+                durante 3 meses. Sin planillas genéricas: tu plan lo arma Franco Patiño mirando TU cuerpo, TU vida y TU objetivo.
+            </p>
+            <div class="hero-botones">
+                <a class="btn btn-acento" href="#planes">🔥 Ver los planes</a>
+                <a class="btn btn-fantasma" href="#" onclick="whatsappDirecto(); return false;">💬 Hablar por WhatsApp</a>
+            </div>
+            <div class="hero-stats">
+                <div><strong>3 meses</strong><span>seguimiento diario</span></div>
+                <div><strong>100%</strong><span>planes personalizados</span></div>
+                <div><strong>24-72 hs</strong><span>se emite el plan</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PLANES (consultas por separado, como Beacons) -->
+    <section id="planes" class="seccion">
+        <h2 class="titulo-seccion">ELEGÍ TU <span class="texto-acento">PLAN</span></h2>
+        <p class="sub-seccion">Tocá tu plan, completá tus datos (es lo que necesito para armarte todo) y te llega directo a mi WhatsApp. Sin idas y vueltas.</p>
+
+        <div class="planes-grid">
+
+            <!-- ============ PLAN SOLO DIETA ============ -->
+            <article class="card-plan">
+                <span class="plan-etiqueta">🥗 NUTRICIÓN</span>
+                <h3>PLAN<br>DE DIETA</h3>
+                <!-- PONER PRECIO cuando el cliente lo defina -->
+                <div class="plan-precio"><span class="precio-valor">$XX.XXX</span></div>
+                <ul class="plan-incluye">
+                    <li>Plan nutricional armado a tus macros (kcal, proteína, etc.)</li>
+                    <li>Los alimentos que VOS ya comés, para que sea simple</li>
+                    <li>Estructura flexible para comer afuera / salir</li>
+                    <li>1 ajuste incluido durante el primer mes</li>
+                </ul>
+
+                <details class="plan-form">
+                    <summary>📝 Completá tus datos</summary>
+                    <div class="campos">
+                        <input id="dieta-nombre" class="campo" placeholder="Tu nombre *" autocomplete="name">
+                        <div class="campo-fila">
+                            <input id="dieta-edad" type="number" class="campo" placeholder="Edad">
+                            <input id="dieta-objetivo" list="objetivos" class="campo" placeholder="Objetivo (ej: definición)">
+                            <input id="dieta-peso" type="number" class="campo" placeholder="Peso (kg) *">
+                            <input id="dieta-altura" type="number" class="campo" placeholder="Altura (cm) *">
+                        </div>
+                        <div class="campo-fila">
+                            <select id="dieta-tipo" class="campo">
+                                <option value="">Tipo de alimentación</option>
+                                <option>Omnívoro</option>
+                                <option>Vegetariano</option>
+                                <option>Vegano</option>
+                                <option>Celiaco / sin TACC</option>
+                            </select>
+                            <select id="dieta-comidas" class="campo">
+                                <option value="">Comidas por día</option>
+                                <option>3 comidas</option>
+                                <option>4 comidas</option>
+                                <option>5 comidas</option>
+                                <option>No tengo preferencia</option>
+                            </select>
+                        </div>
+                        <textarea id="dieta-alergias" class="campo campo-area" placeholder="⚠️ Alergias o intolerancias, alimentos que no comés ni loco (si no hay, poné -)"></textarea>
+                        <textarea id="dieta-salud" class="campo campo-area" placeholder="🏥 Problemas de salud relevantes (presión, tiroides, diabetes, medicación…). Si no hay, poné -"></textarea>
+                    </div>
+                    <button class="btn btn-acento btn-ancho" onclick="pedirPlan('dieta')">🥗 Pedir este plan por WhatsApp</button>
+                    <p class="aviso-falta" id="aviso-dieta" hidden>⚠️ Falta completar nombre, peso o altura</p>
+                </details>
+            </article>
+
+            <!-- ============ PLAN SOLO RUTINA ============ -->
+            <article class="card-plan">
+                <span class="plan-etiqueta">🏋️ ENTRENAMIENTO</span>
+                <h3>PLAN<br>DE RUTINA</h3>
+                <!-- PONER PRECIO cuando el cliente lo defina -->
+                <div class="plan-precio"><span class="precio-valor">$XX.XXX</span></div>
+                <ul class="plan-incluye">
+                    <li>Programa según los días que puedas entrenar (2 a 6)</li>
+                    <li>Ejercicios, series y progresión de cargas explicados</li>
+                    <li>Versión gym y versión casa si la necesitás</li>
+                    <li>1 ajuste incluido durante el primer mes</li>
+                </ul>
+
+                <details class="plan-form">
+                    <summary>📝 Completá tus datos</summary>
+                    <div class="campos">
+                        <input id="rutina-nombre" class="campo" placeholder="Tu nombre *" autocomplete="name">
+                        <div class="campo-fila">
+                            <input id="rutina-edad" type="number" class="campo" placeholder="Edad">
+                            <input id="rutina-objetivo" list="objetivos" class="campo" placeholder="Objetivo (ej: masa muscular)">
+                            <input id="rutina-peso" type="number" class="campo" placeholder="Peso (kg) *">
+                            <input id="rutina-altura" type="number" class="campo" placeholder="Altura (cm) *">
+                        </div>
+                        <div class="campo-fila">
+                            <select id="rutina-dias" class="campo">
+                                <option value="">Días por semana</option>
+                                <option>2 días</option><option>3 días</option><option>4 días</option>
+                                <option>5 días</option><option>6 días</option>
+                            </select>
+                            <select id="rutina-experiencia" class="campo">
+                                <option value="">Experiencia</option>
+                                <option>Nunca entrené</option><option>Principiante</option>
+                                <option>Intermedio</option><option>Avanzado</option>
+                            </select>
+                        </div>
+                        <div class="campo-fila">
+                            <select id="rutina-lugar" class="campo">
+                                <option value="">¿Dónde entrenás?</option>
+                                <option>Gimnasio</option>
+                                <option>Casa (con pesas)</option>
+                                <option>Casa (sin equipo)</option>
+                            </select>
+                            <input id="rutina-horario" class="campo" placeholder="Cuánto duran tus sesiones (ej: 60 min)">
+                        </div>
+                        <textarea id="rutina-lesiones" class="campo campo-area" placeholder="🤕 Lesiones o dolores (rodilla, espalda, hombro…). Si no hay, poné -"></textarea>
+                        <textarea id="rutina-salud" class="campo campo-area" placeholder="🏥 Problemas de salud relevantes. Si no hay, poné -"></textarea>
+                    </div>
+                    <button class="btn btn-acento btn-ancho" onclick="pedirPlan('rutina')">🏋️ Pedir este plan por WhatsApp</button>
+                    <p class="aviso-falta" id="aviso-rutina" hidden>⚠️ Falta completar nombre, peso o altura</p>
+                </details>
+            </article>
+
+            <!-- ============ PLAN COMPLETO (destacado) ============ -->
+            <article class="card-plan plan-destacado">
+                <span class="plan-dest">⭐ MÁS ELEGIDO</span>
+                <span class="plan-etiqueta">🔥 TODO INCLUIDO</span>
+                <h3>PLAN COMPLETO<br>+ SEGUIMIENTO <span class="texto-acento">3 MESES</span></h3>
+                <div class="plan-precio">
+                    <span class="precio-valor">$180.000</span>
+                    <!-- PONER suma de planes sueltos cuando se definan precios -->
+                    <span class="precio-ancla">$XX.XXX por separado</span>
+                </div>
+                <ul class="plan-incluye">
+                    <li><strong>Rutina completa</strong> + <strong>dieta completa</strong> (todo lo de los planes anteriores)</li>
+                    <li><strong>Seguimiento DIARIO</strong> por 3 meses: me pasás tu día y te corrijo</li>
+                    <li>Ajustes de rutina y dieta cada semana según tus avances</li>
+                    <li>Soporte por WhatsApp, respuestas el mismo día</li>
+                    <li>Plan de recompensa si tenés un evento / viaje</li>
+                </ul>
+
+                <details class="plan-form">
+                    <summary>📝 Completá tus datos</summary>
+                    <div class="campos">
+                        <input id="completo-nombre" class="campo" placeholder="Tu nombre *" autocomplete="name">
+                        <div class="campo-fila">
+                            <input id="completo-edad" type="number" class="campo" placeholder="Edad">
+                            <input id="completo-objetivo" list="objetivos" class="campo" placeholder="Objetivo (ej: bajar 8 kg)">
+                            <input id="completo-peso" type="number" class="campo" placeholder="Peso (kg) *">
+                            <input id="completo-altura" type="number" class="campo" placeholder="Altura (cm) *">
+                        </div>
+                        <div class="campo-fila">
+                            <select id="completo-dias" class="campo">
+                                <option value="">Días por semana</option>
+                                <option>2 días</option><option>3 días</option><option>4 días</option>
+                                <option>5 días</option><option>6 días</option>
+                            </select>
+                            <select id="completo-experiencia" class="campo">
+                                <option value="">Experiencia</option>
+                                <option>Nunca entrené</option><option>Principiante</option>
+                                <option>Intermedio</option><option>Avanzado</option>
+                            </select>
+                        </div>
+                        <div class="campo-fila">
+                            <select id="completo-lugar" class="campo">
+                                <option value="">¿Dónde entrenás?</option>
+                                <option>Gimnasio</option>
+                                <option>Casa (con pesas)</option>
+                                <option>Casa (sin equipo)</option>
+                            </select>
+                            <select id="completo-tipo" class="campo">
+                                <option value="">Tipo de alimentación</option>
+                                <option>Omnívoro</option><option>Vegetariano</option>
+                                <option>Vegano</option><option>Celiaco / sin TACC</option>
+                            </select>
+                        </div>
+                        <textarea id="completo-lesiones" class="campo campo-area" placeholder="🤕 Lesiones o dolores. Si no hay, poné -"></textarea>
+                        <textarea id="completo-alergias" class="campo campo-area" placeholder="⚠️ Alergias/intolerancias, alimentos que no comés. Si no hay, poné -"></textarea>
+                        <textarea id="completo-salud" class="campo campo-area" placeholder="🏥 Problemas de salud relevantes (presión, tiroides, diabetes, medicación…). Si no hay, poné -"></textarea>
+                    </div>
+                    <button class="btn btn-acento btn-ancho" onclick="pedirPlan('completo')">🔥 Pedir el plan completo por WhatsApp</button>
+                    <p class="aviso-falta" id="aviso-completo" hidden>⚠️ Falta completar nombre, peso o altura</p>
+                </details>
+            </article>
+        </div>
+
+        <!-- datalist compartido de objetivos -->
+        <datalist id="objetivos">
+            <option>Bajar grasa / definición</option>
+            <option>Ganar masa muscular</option>
+            <option>Recomposición corporal</option>
+            <option>Empezar de cero</option>
+            <option>Ponerme en forma para un evento</option>
+        </datalist>
+    </section>
+
+    <!-- ANTES / DESPUÉS (carrusel) -->
+    <section id="resultados" class="seccion seccion-fondo">
+        <h2 class="titulo-seccion">RESULTADOS <span class="texto-acento">REALES</span></h2>
+        <p class="sub-seccion">Todos con plan personalizado y seguimiento. Deslizá para verlos ➡️</p>
+
+        <div class="carrusel" id="carrusel">
+            <div class="carrusel-pista" id="carruselPista">
+
+                <!-- Sustituir con fotos reales del cliente -->
+                <div class="slide">
+                    <div class="slide-fotos">
+                        <figure><img src="https://images.unsplash.com/photo-1590487988256-9ed24103863e?w=500&q=80" alt="Antes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption>ANTES</figcaption></figure>
+                        <figure><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2fa1c5?w=500&q=80" alt="Después" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption class="fig-despues">DESPUÉS</figcaption></figure>
+                    </div>
+                    <p class="slide-dato">💬 "Bajé <strong>9 kg</strong> en 12 semanas sin morirme de hambre" — Nicolás</p>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-fotos">
+                        <figure><img src="https://images.unsplash.com/photo-1567598508481-652866bfe700?w=500&q=80" alt="Antes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption>ANTES</figcaption></figure>
+                        <figure><img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&q=80" alt="Después" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption class="fig-despues">DESPUÉS</figcaption></figure>
+                    </div>
+                    <p class="slide-dato">💬 "Subí <strong>6 kg de músculo</strong> estando en casa con pesas livianas" — Camila</p>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-fotos">
+                        <figure><img src="https://images.unsplash.com/photo-1550345332-aabbfd7ac9fd?w=500&q=80" alt="Antes" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption>ANTES</figcaption></figure>
+                        <figure><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Después" loading="lazy" onerror="this.parentElement.classList.add('sin-foto')"><figcaption class="fig-despues">DESPUÉS</figcaption></figure>
+                    </div>
+                    <p class="slide-dato">💬 "Con lumbalgia, entrenando SIN dolor y bajé <strong>12 cm</strong> de cintura" — Diego</p>
+                </div>
+            </div>
+
+            <button class="carrusel-flecha atras" onclick="moverCarrusel(-1)" aria-label="Anterior">❮</button>
+            <button class="carrusel-flecha delante" onclick="moverCarrusel(1)" aria-label="Siguiente">❯</button>
+            <div class="carrusel-puntos" id="carruselPuntos"></div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="proceso" class="seccion">
+        <h2 class="titulo-seccion">CÓMO <span class="texto-acento">FUNCIONA</span></h2>
+        <div class="pasos">
+            <div class="paso"><span class="paso-num">1</span><h4>Elegí tu plan y completá tus datos</h4><p>Peso, edad, objetivo, lesiones, lo que comés… te llega todo a mi WhatsApp.</p></div>
+            <div class="paso"><span class="paso-num">2</span><h4>Te armo tu plan</h4><p>Leo tus datos, te hago las últimas consultas y en 24-72 hs tenés tu rutina y/o dieta lista.</p></div>
+            <div class="paso"><span class="paso-num">3</span><h4>Reportás tu día a día</h4><p>Me pasás cómo fue tu entreno y tu alimentación y te voy corrigiendo en tiempo real.</p></div>
+            <div class="paso"><span class="paso-num">4</span><h4>Mensualmente, ajustamos</h4><p>Todos los domingos revisamos tus progresos y actualizamos el plan para que nunca te estanques.</p></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="seccion seccion-fondo">
+        <h2 class="titulo-seccion">LO QUE DICEN SUS <span class="texto-acento">ALUMNOS</span></h2>
+        <div class="testimonios-grid">
+            <figure class="card-testimonio">
+                <span class="estrellas">★★★★★</span>
+                <blockquote>"Laburo 10 horas y pensé que nunca iba a poder. El plan se adaptó a MI horario, no al revés. -9 kg en 3 meses y la dieta es de comida comun."</blockquote>
+                <figcaption><span class="t-foto">👤</span><div><strong>Nicolás S.</strong><span> Plan completo · 3 meses</span></div></figcaption>
+            </figure>
+            <figure class="card-testimonio">
+                <span class="estrellas">★★★★★</span>
+                <blockquote>"Tenía miedo de lesionarme otra vez. Me armo la rutina alrededor de mi rodilla y entrené los 3 meses sin un solo dolor raro."</blockquote>
+                <figcaption><span class="t-foto">👤</span><div><strong>Diego M.</strong><span> Plan completo · 3 meses</span></div></figcaption>
+            </figure>
+            <figure class="card-testimonio">
+                <span class="estrellas">★★★★★</span>
+                <blockquote>"Comí SIEMPRE de todo: asado, pastas, salida con amigas. La dieta se hace flexible. Bajé 6 kg y no dejé de vivir."</blockquote>
+                <figcaption><span class="t-foto">👤</span><div><strong>Camila R.</strong><span> Plan de dieta · 2 meses</span></div></figcaption>
+            </figure>
+            <figure class="card-testimonio">
+                <span class="estrellas">★★★★★</span>
+                <blockquote>"Empecé sin saber ni cómo agarrar una barra. La rutina con videos me salvó: hoy entreno solo y me banco la rutina entera."</blockquote>
+                <figcaption><span class="t-foto">👤</span><div><strong>Tomás L.</strong><span> Plan de rutina · podría repetirse</span></div></figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="seccion">
+        <h2 class="titulo-seccion">PREGUNTAS <span class="texto-acento">FRECUENTES</span></h2>
+        <div class="faq-lista">
+            <details class="faq-item"><summary>🕐 ¿Cuánto tarda en estar listo mi plan?</summary><p>Entre 24 y 72 horas desde que terminamos de definir tus datos. Los planes completos con seguimiento arrancan la semana que se contrata.</p></details>
+            <details class="faq-item"><summary>🏠 ¿Puedo entrenar en casa sin máquinas?</summary><p>Sí. Lo elegís en el formulario y el plan se arma con lo que tengas: gimnasio completo, pesas livianas en casa, o puro peso corporal.</p></details>
+            <details class="faq-item"><summary>🥘 ¿La dieta me saca asado y salidas?</summary><p>No. Es una dieta FLEXIBLE: se estructura con lo que vos ya comés, ajustan cantidades y queda lugar para las salidas. Nada de comer pollo con arroz 6 veces al día.</p></details>
+            <details class="faq-item"><summary>🤕 ¿Qué pasa si tengo una lesión?</summary><p>Ponela en el formulario. Se arman el plan evitando los movimientos comprometidos y con alternativas seguras. Si tu lesión requiere, te pido el visto bueno de tu médico o kinesiólogo.</p></details>
+            <details class="faq-item"><summary>💳 ¿Cómo se paga?</summary><p>Por transferencia (Mercado Pago o banco) al confirmar el plan. Se abona el 100% por adelantado en el caso de los planes de consulta única, o en 3 cuotas mensuales el plan completo con seguimiento.</p></details>
+            <details class="faq-item"><summary>🔄 ¿Qué pasa si no veo resultados?</summary><p>El seguimiento diario del plan completo existe justamente para eso: si algo no está funcionando, lo cambio. El sistema se ajusta a vos, no al revés.</p></details>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="cta-caja">
+            <h2 class="titulo-seccion">¿LISTO PARA <span class="texto-acento">EMPEZAR?</span></h2>
+            <p>Los cupos de seguimiento diario son limitados para poder atender bien a cada uno. Consultá antes de que se llenen.</p>
+            <a class="btn btn-acento btn-grande" href="#" onclick="whatsappDirecto(); return false;">💬 Escribime por WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Franco Patiño — Primenutrición · Asesoría online de entrenamiento y nutrición</p>
+        <p class="footer-links"><a href="#" onclick="instagramDirecto(); return false;">📷 @primenutricion</a> · <a href="#" onclick="whatsappDirecto(); return false;">💬 +54 9 11 2292-9399</a></p>
+        <p class="footer-nota">© 2026 · Consultá con tu médico antes de iniciar cualquier plan físico o nutricional.</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <button class="wsp-flotante" onclick="whatsappDirecto()" aria-label="Consultar por WhatsApp">💬</button>
+
+    <script src="java.js"></script>
+</body>
+</html>
